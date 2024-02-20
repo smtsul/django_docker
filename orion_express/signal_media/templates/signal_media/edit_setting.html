@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit setting.ini</title>
+</head>
+<body>
+    <h1>Edit setting.ini</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="setting_content" rows="20" cols="150">{{ form.setting_content }}</textarea><br>
+        <input type="submit" value="Сохранить">
+    </form>
+</body>
+</html>

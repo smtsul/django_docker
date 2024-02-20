@@ -1,0 +1,26 @@
+/* styles.css */
+
+.flex-container {
+    display: flex;
+}
+
+.file-list {
+    margin-right: 20px;
+}
+
+.error-block {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    color: #ff0000;
+    white-space: pre-line;
+}
+
+.success {
+    color: blue !important;  /* Синий цвет для успешного выполнения */
+}
+
+.error {
+    color: red !important;  /* Красный цвет для ошибки */
+}

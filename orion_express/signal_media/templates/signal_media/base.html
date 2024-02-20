@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        Base Title
+        {% endblock %}
+    </title>
+</head>
+<body>
+<script defer src="/static/signal_media/js/jquery-3.7.1.js"></script>
+{% block body %}
+<div>
+    <a href="{% url 'signal_media:edit_setting' %}"><h2> Редактирование настроек </h2> </a>
+    <br><a href="{% url 'signal_media:upload_files' %}"><h2> Обработка плейлистов </h2></a>
+</div>
+{% endblock %}
+</body>
+
+</html>
