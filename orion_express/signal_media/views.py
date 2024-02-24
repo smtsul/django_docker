@@ -124,7 +124,7 @@ def test_ajax_log(request):  # TODO доделать логи, вывод в jso
         results = []
         for i in range(0, len(plst_input)):
             result_min = check_sec_to_min(temp_path_out, plst_output[i])
-            #result_sec = check_sec(temp_path_out, plst_output[i], temp_path_input, plst_input[i])
+            result_sec = check_sec(temp_path_out, plst_output[i], temp_path_input, plst_input[i])
             results.append({'result_min': result_min, 'result_sec': result_sec})
         #print('results:', results)
         #plst_to_log()

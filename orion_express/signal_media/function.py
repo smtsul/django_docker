@@ -805,7 +805,8 @@ def check_sec(path, filename, path_to_old, old_list):  # todo доделать �
 def check_sec_to_min(path, filename):
     result = ''  # Результат, который мы будем возвращать
     liner, g, timer = [], [], []
-    with open(path + filename, newline='') as file:
+
+    with open(path + filename, newline='',encoding='cp1251') as file:
         playlist = csv.reader(file, delimiter=';')
         for row in playlist:
             liner.append(row)
