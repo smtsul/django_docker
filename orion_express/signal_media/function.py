@@ -492,7 +492,10 @@ def rename_recopy(file_name, year):  # функция переимоновани
     # Наука 18.07.xlsx
     # МП 17.07.xlsx
     # Т24 17.07.xlsx
-
+    os.makedirs(os.path.dirname(path_after_rename), exist_ok=True)
+    os.makedirs(os.path.dirname(path_after_kzpl), exist_ok=True)
+    os.makedirs(os.path.dirname(dir_for_blocks), exist_ok=True)
+    os.makedirs(os.path.dirname(path_to_log), exist_ok=True)
     temp_name_file = ' '.join(file_name)
     temp = file_name[-1].split('.')  # тут хранится дата(индекс от 0 до 2-х и 3-ый индекс-расширение
     if len(temp[2]) == 2:
