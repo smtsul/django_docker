@@ -76,7 +76,6 @@ $(document).ready(function () { //todo полностью разобраться
     }
 
     // Обработчик события клика по кнопке "Запустить функцию rename"
-    // Обработчик события клика по кнопке "Запустить функцию rename"
 var renameBtn = $("#renameBtn"); //TODO переделать
 renameBtn.on("click", function (event) {
     event.preventDefault();

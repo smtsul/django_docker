@@ -28922,3 +28922,37 @@ TypeError: can only concatenate list (not "str") to list
 2024-02-20 00:22:01,855-INFO-C:\Users\User\PycharmProjects\django2\orion_express\signal_media\main.py changed, reloading.
 2024-02-20 00:45:21,425-INFO-C:\Users\User\PycharmProjects\django2\orion_express\signal_media\views.py changed, reloading.
 2024-02-20 00:45:24,273-WARNING-Not Found: /favicon.ico
+2024-02-26 00:52:52,197-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py changed, reloading.
+2024-02-26 01:00:25,233-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py changed, reloading.
+2024-02-26 01:00:45,021-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 28, in your_ajax_view
+    created_blocks()
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 58, in created_blocks
+    blocks_result = create_blocks_v4_rand(video_file, new_blocks, chanel_name)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 379, in create_blocks_v4_rand
+    workbook = openpyxl.load_workbook(path_to_video)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 344, in load_workbook
+    reader = ExcelReader(filename, read_only, keep_vba,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 123, in __init__
+    self.archive = _validate_archive(fn)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 95, in _validate_archive
+    archive = ZipFile(filename, 'r')
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1281, in __init__
+    self.fp = io.open(file, filemode)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'signal_media\\old_new_sarafan.xlsx'
+2024-02-26 01:02:02,414-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\path.py changed, reloading.
+2024-02-26 01:04:41,983-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\path.py changed, reloading.
+2024-02-26 01:26:16,954-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py changed, reloading.

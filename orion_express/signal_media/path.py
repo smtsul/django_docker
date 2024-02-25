@@ -16,10 +16,8 @@ def get_config_path(section, key):
 path_before = os.path.join('signal_media', 'temp', 'input', '')
 path_after_rename = os.path.join('signal_media', 'temp', 'schedule', '')
 path_to_out = os.path.join('signal_media', 'temp', 'outter', '')
-plst_dir = os.path.join('signal_media','temp',  'schedule', '')
 dir_for_blocks = os.path.join('signal_media', 'temp', 'dir_for_blocks', '')
-dir_input_playlist = os.path.join('signal_media', 'temp', 'input', '')
-video_file = os.path.join('signal_media', 'old_new_sarafan.xlsx')
+video_file = os.path.join('signal_media', 'NEW_Списки промо3.xlsx')
 path_to_log = os.path.join('signal_media', 'temp', 'log')
 
 # Пути к серверам
