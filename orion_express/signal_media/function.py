@@ -495,7 +495,9 @@ def rename_recopy(file_name, year):  # функция переимоновани
     os.makedirs(os.path.dirname(path_after_rename), exist_ok=True)
     os.makedirs(os.path.dirname(path_after_kzpl), exist_ok=True)
     os.makedirs(os.path.dirname(dir_for_blocks), exist_ok=True)
-    os.makedirs(os.path.dirname(path_to_log), exist_ok=True)
+    os.makedirs(path_to_log, exist_ok=True)
+    print(path_to_log)
+
     temp_name_file = ' '.join(file_name)
     temp = file_name[-1].split('.')  # тут хранится дата(индекс от 0 до 2-х и 3-ый индекс-расширение
     if len(temp[2]) == 2:
@@ -739,14 +741,12 @@ def check_sec(path, filename, path_to_old, old_list):  # todo доделать �
     liner, g, timer = [], [], []
     temp = []
     error_time = ''  # Строка для записи времени ошибок
-    try:
-        with open(path + filename, newline='') as file:
-            playlist = csv.reader(file, delimiter=';')
-            for row in playlist:
-                if len(row) != 0:
-                    liner.append(row)
-    except Exception as e:
-        print(e)
+    print(filename)
+    with open(path + filename, newline='', encoding='cp1251') as file:
+        playlist = csv.reader(file, delimiter=';')
+        for row in playlist:
+            if len(row) != 0:
+                liner.append(row)
     for i in range(0, len(liner)):
         if len(liner[i]) != 0:
             temp = datetime.strptime(liner[i][0], '%H:%M:%S')
@@ -754,46 +754,36 @@ def check_sec(path, filename, path_to_old, old_list):  # todo доделать �
         else:
             timer.append('')
     temp2 = [[] for j in range(0, len(liner))]
-    try:  # заполняем новый массив секундами от начала старта врезки и до конца
-        for i in range(0, len(liner)):
-            if len(liner[i]) != 0:
-                temp = datetime.strptime(liner[i][0], '%H:%M:%S')
-                temp2[i].append(temp.minute * 60 + temp.hour * 60 * 60 + temp.second)
-                temp = datetime.strptime(liner[i][2], '%H:%M:%S')
-                temp2[i].append(temp2[i][0] + temp.minute * 60 + temp.hour * 60 * 60 + temp.second)
-    except Exception as e:
-        print(e)  # ToDO переделать вывод в json
+    # заполняем новый массив секундами от начала старта врезки и до конца
+    for i in range(0, len(liner)):
+        if len(liner[i]) != 0:
+            temp = datetime.strptime(liner[i][0], '%H:%M:%S')
+            temp2[i].append(temp.minute * 60 + temp.hour * 60 * 60 + temp.second)
+            temp = datetime.strptime(liner[i][2], '%H:%M:%S')
+            temp2[i].append(temp2[i][0] + temp.minute * 60 + temp.hour * 60 * 60 + temp.second)
     result = ''
     # работа с плейлистом до кзпл-а
     timer_after_kzpl = []
     j = 0
-    try:
-        for i in range(0, len(temp2)):
-            if temp2[i - 1] != temp2[i]:
-                timer_after_kzpl.append(temp2[i])
-    except Exception as e:
-        print(e)  # ToDO переделать вывод в json
-    try:
-        wb = openpyxl.reader.excel.load_workbook(filename=path_to_old + old_list)
-        sheets_list = wb.sheetnames
-        sheet = wb[sheets_list[0]]
-        for i in range(1, sheet.max_row):
-            green = sheet.cell(row=i, column=1).fill.start_color.index  # FFB3FFC1 зеленый цвет
-            if green == 'FFB3FFC1':
-                green_value = sheet.cell(row=i, column=1).value[:-3]  # убираем кадры
-                green_value = datetime.strptime(green_value, '%H:%M:%S')
-                green_value_sec = green_value.minute * 60 + green_value.hour * 60 * 60 + green_value.second
-
-                temper = 5  # этот костыль надо переделать
-                for j in range(0, len(timer_after_kzpl)):
-                    if timer_after_kzpl[j][0] <= green_value_sec <= timer_after_kzpl[j][1]:
-                        temper = 0
-                        break
-                if temper == 5:
-                    error_time += str(green_value)[10:] + '\n'
-    except Exception as e:
-        print(e)  # ToDO переделать вывод в json
-    print(result)
+    for i in range(0, len(temp2)):
+        if temp2[i - 1] != temp2[i]:
+            timer_after_kzpl.append(temp2[i])
+    wb = openpyxl.reader.excel.load_workbook(filename=path_to_old + old_list)
+    sheets_list = wb.sheetnames
+    sheet = wb[sheets_list[0]]
+    for i in range(1, sheet.max_row):
+        green = sheet.cell(row=i, column=1).fill.start_color.index  # FFB3FFC1 зеленый цвет
+        if green == 'FFB3FFC1':
+            green_value = sheet.cell(row=i, column=1).value[:-3]  # убираем кадры
+            green_value = datetime.strptime(green_value, '%H:%M:%S')
+            green_value_sec = green_value.minute * 60 + green_value.hour * 60 * 60 + green_value.second
+            temper = 5  # этот костыль надо переделать
+            for j in range(0, len(timer_after_kzpl)):
+                if timer_after_kzpl[j][0] <= green_value_sec <= timer_after_kzpl[j][1]:
+                    temper = 0
+                    break
+            if temper == 5:
+                error_time += str(green_value)[10:] + '\n'
     if error_time != '':
         result = {'error': True, 'message': 'В плейлисте ' + old_list + " есть ошибки на:", 'error_time': error_time}
     else:
@@ -806,7 +796,7 @@ def check_sec_to_min(path, filename):
     result = ''  # Результат, который мы будем возвращать
     liner, g, timer = [], [], []
 
-    with open(path + filename, newline='',encoding='cp1251') as file:
+    with open(path + filename, newline='', encoding='cp1251') as file:
         playlist = csv.reader(file, delimiter=';')
         for row in playlist:
             liner.append(row)

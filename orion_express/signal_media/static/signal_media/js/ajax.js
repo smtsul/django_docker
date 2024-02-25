@@ -122,6 +122,12 @@ loggedBtn.on("click", function (event) {
 var checkPlaylistsBtn = $("#action");
 var errorBlock = $("#errorBlock"); // Получаем блок ошибок
 
+var checkPlaylistsBtn = $("#action");
+var errorBlock = $("#errorBlock"); // Получаем блок ошибок
+
+var checkPlaylistsBtn = $("#action");
+var errorBlock = $("#errorBlock"); // Получаем блок ошибок
+
 checkPlaylistsBtn.on("click", function (event) {
     event.preventDefault();
 
@@ -134,34 +140,23 @@ checkPlaylistsBtn.on("click", function (event) {
                 var errorMessage = "";
 
                 for (var i = 0; i < data.results.length; i++) {
-                    // Проверяем, есть ли ошибка в текущем элементе
-                    if (data.results[i].result_min.error || data.results[i].result_sec.error) {
-                        errorMessage += data.results[i].result_min.message + "<br>" + data.results[i].result_sec.message + "<br>";
-                    }
+                    errorMessage += data.results[i].result_min.message + "<br>" + data.results[i].result_sec.message + "<br>";
                 }
 
-                if (errorMessage !== "") {
-                    // Если есть ошибки, обновляем содержимое блока ошибок и добавляем класс ошибки
-                    errorBlock.html(errorMessage);
-                    errorBlock.removeClass("success").addClass("error");
-                } else {
-                    // Если ошибок нет, обновляем содержимое блока ошибок и добавляем класс успешного выполнения
-                    errorBlock.html("Ошибок нет");
-                    errorBlock.removeClass("error").addClass("success");
-                }
+                // Обновляем содержимое блока ошибок
+                errorBlock.html(errorMessage);
             } else {
-                // Выводим сообщение об ошибке данных в блок ошибок и добавляем класс ошибки
+                // Выводим сообщение об ошибке данных в блок ошибок
                 errorBlock.html("Ошибка: нет данных для проверки");
-                errorBlock.removeClass("success").addClass("error");
             }
         },
         function (error) {
-            // Выводим сообщение об ошибке AJAX-запроса в блок ошибок и добавляем класс ошибки
+            // Выводим сообщение об ошибке AJAX-запроса в блок ошибок
             errorBlock.html("Error sending AJAX request: " + JSON.stringify(error));
-            errorBlock.removeClass("success").addClass("error");
         }
     );
 });
+
 
 
 
