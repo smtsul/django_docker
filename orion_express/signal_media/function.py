@@ -2,7 +2,6 @@ import configparser
 import csv
 from datetime import datetime
 import shutil
-import json
 import openpyxl
 import random
 from .path import *
@@ -459,7 +458,7 @@ def create_blocks_v4_rand(path_to_video, result_green, chanel_name):  # out list
 def plst_to_log():
     # TODO подумать куда вставить, доделать
 
-    src = [path_before, path_after_rename, path_to_out, path_after_kzpl, dir_for_blocks]
+    src = [path_before, path_after_rename, path_to_out, path_to_out, dir_for_blocks]
     trg = path_to_log
 
     try:
@@ -493,7 +492,7 @@ def rename_recopy(file_name, year):  # функция переимоновани
     # МП 17.07.xlsx
     # Т24 17.07.xlsx
     os.makedirs(os.path.dirname(path_after_rename), exist_ok=True)
-    os.makedirs(os.path.dirname(path_after_kzpl), exist_ok=True)
+    os.makedirs(os.path.dirname(path_to_out), exist_ok=True)
     os.makedirs(os.path.dirname(dir_for_blocks), exist_ok=True)
     os.makedirs(path_to_log, exist_ok=True)
     print(path_to_log)
@@ -608,82 +607,82 @@ def open_file(dir):
 def copy_after_kzpl(file_name):  # на плейлисты из папки out, раскидываем по резервным серверам
     # s=file_name.split('.')
     if 'мп'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         hd_out_osn + 'MyPlanetHD/' + file_name[
                             0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         hd_out_reserve + 'MyPlanetHD/' + file_name[0])
     elif 'сарафан'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_after_kzpl + file_name[0],  # берет файл из одной папки и копирует в сервер #hd osn
+        shutil.copyfile(path_to_out + file_name[0],  # берет файл из одной папки и копирует в сервер #hd osn
                         sd_out_osn + 'Сарафан/' + file_name[0])
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         sd_out_reserve + 'Сарафан/' + file_name[0])
     elif 'наука'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         hd_out_osn + 'NaukaHD/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         hd_out_reserve + 'NaukaHD/' + file_name[0])
     elif 'мульт'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         hd_out_osn + 'MultHD/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         hd_out_reserve + 'MultHD/' + file_name[0])
     elif 'нст'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         sd_out_osn + 'NST/' + file_name[0])
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         sd_out_reserve + 'NST/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
     elif 'cinema'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         sd_out_osn + 'Cinema/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         sd_out_reserve + 'Cinema/' + file_name[0])
     elif 'т24'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         sd_out_osn + 'Techno24/' + file_name[
                             0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         sd_out_reserve + 'Techno24/' + file_name[0])
 
 
 def copy_after_kzpl_all(file_name):  # на плейлисты из папки out, раскидываем по серверам
     # s=file_name.split('.')
     if 'мп'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         hd_out_osn + 'MyPlanetHD/' + file_name[
                             0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         hd_out_reserve + 'MyPlanetHD/' + file_name[0])
     elif 'сарафан'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_after_kzpl + file_name[0],  # берет файл из одной папки и копирует в сервер #hd osn
+        shutil.copyfile(path_to_out + file_name[0],  # берет файл из одной папки и копирует в сервер #hd osn
                         sd_out_osn + 'Сарафан/' + file_name[0])
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         sd_out_reserve + 'Сарафан/' + file_name[0])
     elif 'наука'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         hd_out_osn + 'NaukaHD/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         hd_out_reserve + 'NaukaHD/' + file_name[0])
     elif 'мульт'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         hd_out_osn + 'MultHD/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         hd_out_reserve + 'MultHD/' + file_name[0])
     elif 'нст'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         sd_out_osn + 'NST/' + file_name[0])
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         sd_out_reserve + 'NST/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
     elif 'cinema'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         sd_out_osn + 'Cinema/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         sd_out_reserve + 'Cinema/' + file_name[0])
     elif 'т24'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         sd_out_osn + 'Techno24/' + file_name[
                             0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_after_kzpl + file_name[0],
+        shutil.copyfile(path_to_out + file_name[0],
                         sd_out_reserve + 'Techno24/' + file_name[0])
 
 

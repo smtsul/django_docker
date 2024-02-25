@@ -1,6 +1,6 @@
 import datetime
 import os
-
+import json
 from .function import *
 
 
@@ -61,7 +61,7 @@ def created_blocks():
 
 def copy_to_coder():
     try:
-        my_list = open_file(path_after_kzpl)
+        my_list = open_file(path_to_out)
         count = 0
         for i in range(0, len(my_list)):
             copy_after_kzpl(my_list[i].split())
