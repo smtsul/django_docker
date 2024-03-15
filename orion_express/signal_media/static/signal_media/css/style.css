@@ -24,3 +24,25 @@
 .error {
     color: red !important;  /* Красный цвет для ошибки */
 }
+
+
+:root {
+    --white: #fff;
+    --grey-120: #313130;
+    --grey-46: #716f6e;
+    --grey-30: #908e8d;
+    --grey-16: #c6c4c2;
+    --grey-10: #f7f4f3;
+    --grey-11: #e9e6e4;
+    --grey-13: #d9d6d5;
+    --backgroundBase: var(--grey-10);
+    --borderPrimary: var(--grey-13);
+}
+.sitetoolbar {
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    background: var(--backgroundBase);
+    border-bottom: 4px solid var(--borderPrimary);
+    box-sizing: border-box
+}

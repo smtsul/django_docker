@@ -4,9 +4,6 @@ File upload
 {% endblock %}
 
 {% block body %}
-<script defer src="/static/signal_media/js/ajax.js"></script>
-<link rel="stylesheet" href="/static/signal_media/css/style.css">
-
 <h1>Cигнал Медия</h1>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
@@ -19,7 +16,6 @@ File upload
     <button type="button" id="renameBtn">Обработать плейлисты</button>
     <button type="submit" id="action" value="log">Проверить плейлисты</button>
     <button type="submit" id="logged" value="log">Очистить список</button>
-    <!-- <button type="submit" name="deleted" value="deleted">Удалить</button> -->
 </form>
 
 <div class="flex-container">

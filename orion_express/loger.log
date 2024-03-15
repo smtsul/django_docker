@@ -28956,3 +28956,1066 @@ FileNotFoundError: [Errno 2] No such file or directory: 'signal_media\\old_new_s
 2024-02-26 01:02:02,414-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\path.py changed, reloading.
 2024-02-26 01:04:41,983-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\path.py changed, reloading.
 2024-02-26 01:26:16,954-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py changed, reloading.
+2024-03-02 08:41:58,340-WARNING-Not Found: /favicon.ico
+2024-03-02 08:42:05,645-WARNING-Not Found: /shot/
+2024-03-03 11:35:37,525-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\shot\views.py changed, reloading.
+2024-03-03 11:36:36,207-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\shot\views.py changed, reloading.
+2024-03-03 11:37:47,316-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\shot\views.py changed, reloading.
+2024-03-05 15:38:00,120-WARNING-Not Found: /img/sitetoolbar__logo_small_ru.svg
+2024-03-05 15:38:00,121-WARNING-Not Found: /img/sitetoolbar__logo_small_ru-white.svg
+2024-03-05 15:38:00,123-WARNING-Not Found: /img/sitetoolbar__logo_ru.svg
+2024-03-05 15:38:00,125-WARNING-Not Found: /img/sitetoolbar__logo_ru-white.svg
+2024-03-05 15:38:00,160-WARNING-Not Found: /img/sitetoolbar__logo_small_ru.svg
+2024-03-05 15:38:00,163-WARNING-Not Found: /img/sitetoolbar__logo_ru-white.svg
+2024-03-05 15:38:00,164-WARNING-Not Found: /img/sitetoolbar__logo_ru.svg
+2024-03-05 15:38:00,196-WARNING-Not Found: /img/sitetoolbar__logo_small_ru-white.svg
+2024-03-05 15:38:00,498-WARNING-Not Found: /favicon.ico
+2024-03-05 15:56:01,970-WARNING-Not Found: /screencast/nodejs
+2024-03-05 15:56:48,567-WARNING-Not Found: /screencast/nodejs
+2024-03-05 17:00:53,888-WARNING-Not Found: /favicon.ico
+2024-03-05 17:02:00,197-WARNING-Not Found: /favicon.ico
+2024-03-05 17:02:15,279-WARNING-Not Found: /favicon.ico
+2024-03-05 17:06:10,355-WARNING-Not Found: /favicon.ico
+2024-03-06 23:20:24,580-WARNING-Not Found: /favicon.ico
+2024-03-06 23:20:50,960-ERROR-Internal Server Error: /signal_media/upload_files/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 78, in upload_files
+    return render(request, 'signal_media/upload.html', {'plst': files})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'upload_files' not found. 'upload_files' is not a valid view function or pattern name.
+2024-03-06 23:21:40,615-ERROR-Internal Server Error: /signal_media/upload_files/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 78, in upload_files
+    return render(request, 'signal_media/upload.html', {'plst': files})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'upload_files' not found. 'upload_files' is not a valid view function or pattern name.
+2024-03-06 23:21:45,960-ERROR-Internal Server Error: /signal_media/upload_files/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 78, in upload_files
+    return render(request, 'signal_media/upload.html', {'plst': files})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'upload_files' not found. 'upload_files' is not a valid view function or pattern name.
+2024-03-06 23:25:22,901-WARNING-Not Found: /shot/
+2024-03-07 05:41:39,580-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 106, in test_ajax_log
+    plst_input = open_file(path_after_rename)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 603, in open_file
+    files = os.listdir(dir)
+            ^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'signal_media\\temp\\schedule\\'
+2024-03-07 05:41:40,410-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 27, in your_ajax_view
+    create_time(year)
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 8, in create_time
+    play_list_dir = open_file(path_before)
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 603, in open_file
+    files = os.listdir(dir)
+            ^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'signal_media\\temp\\input\\'
+2024-03-07 05:41:42,015-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 106, in test_ajax_log
+    plst_input = open_file(path_after_rename)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 603, in open_file
+    files = os.listdir(dir)
+            ^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'signal_media\\temp\\schedule\\'
+2024-03-07 05:41:43,281-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 27, in your_ajax_view
+    create_time(year)
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 8, in create_time
+    play_list_dir = open_file(path_before)
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 603, in open_file
+    files = os.listdir(dir)
+            ^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'signal_media\\temp\\input\\'
+2024-03-07 05:41:53,915-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 27, in your_ajax_view
+    create_time(year)
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 8, in create_time
+    play_list_dir = open_file(path_before)
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 603, in open_file
+    files = os.listdir(dir)
+            ^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'signal_media\\temp\\input\\'
+2024-03-07 05:41:55,873-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 27, in your_ajax_view
+    create_time(year)
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 8, in create_time
+    play_list_dir = open_file(path_before)
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 603, in open_file
+    files = os.listdir(dir)
+            ^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'signal_media\\temp\\input\\'
+2024-03-07 05:41:56,488-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 106, in test_ajax_log
+    plst_input = open_file(path_after_rename)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 603, in open_file
+    files = os.listdir(dir)
+            ^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'signal_media\\temp\\schedule\\'
+2024-03-07 05:41:57,484-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 27, in your_ajax_view
+    create_time(year)
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 8, in create_time
+    play_list_dir = open_file(path_before)
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 603, in open_file
+    files = os.listdir(dir)
+            ^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'signal_media\\temp\\input\\'
+2024-03-07 05:41:58,139-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 106, in test_ajax_log
+    plst_input = open_file(path_after_rename)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 603, in open_file
+    files = os.listdir(dir)
+            ^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'signal_media\\temp\\schedule\\'
+2024-03-07 05:41:58,618-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 27, in your_ajax_view
+    create_time(year)
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 8, in create_time
+    play_list_dir = open_file(path_before)
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 603, in open_file
+    files = os.listdir(dir)
+            ^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'signal_media\\temp\\input\\'
+2024-03-10 19:23:55,128-WARNING-Not Found: /favicon.ico
+2024-03-10 20:01:49,257-WARNING-Not Found: /favicon.ico
+2024-03-12 02:12:06,718-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py changed, reloading.
+2024-03-12 02:12:26,543-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\urls.py changed, reloading.
+2024-03-12 02:12:37,527-WARNING-Not Found: /favicon.ico
+2024-03-12 02:13:00,221-WARNING-Not Found: /signal_media/download_file/2024-02-18_Т24.csv
+2024-03-12 02:13:13,200-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py changed, reloading.
+2024-03-12 02:15:59,834-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py changed, reloading.
+2024-03-12 02:16:16,763-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py changed, reloading.
+2024-03-12 02:17:41,018-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py changed, reloading.
+2024-03-12 02:36:26,356-WARNING-Not Found: /favicon.ico
+2024-03-12 02:36:33,246-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 84, in test_ajax_log
+    result_sec = check_sec(temp_path_out, plst_output[i], temp_path_input, plst_input[i])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 770, in check_sec
+    wb = openpyxl.reader.excel.load_workbook(filename=path_to_old + old_list)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 344, in load_workbook
+    reader = ExcelReader(filename, read_only, keep_vba,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 123, in __init__
+    self.archive = _validate_archive(fn)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 95, in _validate_archive
+    archive = ZipFile(filename, 'r')
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1299, in __init__
+    self._RealGetContents()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1366, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+2024-03-12 02:38:01,547-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 84, in test_ajax_log
+    result_sec = check_sec(temp_path_out, plst_output[i], temp_path_input, plst_input[i])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 770, in check_sec
+    wb = openpyxl.reader.excel.load_workbook(filename=path_to_old + old_list)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 346, in load_workbook
+    reader.read()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 291, in read
+    self.read_workbook()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 153, in read_workbook
+    self.parser.parse()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\workbook.py", line 44, in parse
+    src = self.archive.read(self.workbook_part_name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1507, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1562, in open
+    raise BadZipFile("Truncated file header")
+zipfile.BadZipFile: Truncated file header
+2024-03-12 02:38:15,103-WARNING-Not Found: /favicon.ico
+2024-03-12 02:40:07,705-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 84, in test_ajax_log
+    result_sec = check_sec(temp_path_out, plst_output[i], temp_path_input, plst_input[i])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 770, in check_sec
+    wb = openpyxl.reader.excel.load_workbook(filename=path_to_old + old_list)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 346, in load_workbook
+    reader.read()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 287, in read
+    self.read_manifest()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1507, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1562, in open
+    raise BadZipFile("Truncated file header")
+zipfile.BadZipFile: Truncated file header
+2024-03-12 02:41:27,586-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py changed, reloading.
+2024-03-12 02:42:07,455-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 100, in test_ajax_log
+    result_sec = check_sec(temp_path_out, plst_output[i], temp_path_input, plst_input[i])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 770, in check_sec
+    wb = openpyxl.reader.excel.load_workbook(filename=path_to_old + old_list)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 346, in load_workbook
+    reader.read()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 289, in read
+    self.read_strings()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 147, in read_strings
+    self.shared_strings = reader(src)
+                          ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\strings.py", line 16, in read_string_table
+    for _, node in iterparse(xml_source):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\xml\etree\ElementTree.py", line 1251, in iterator
+    data = source.read(16 * 1024)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 951, in read
+    data = self._read1(n)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1019, in _read1
+    data += self._read2(n - len(data))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1054, in _read2
+    raise EOFError
+EOFError
+2024-03-12 02:42:18,134-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py changed, reloading.
+2024-03-12 02:43:18,875-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 84, in test_ajax_log
+    result_sec = check_sec(temp_path_out, plst_output[i], temp_path_input, plst_input[i])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 770, in check_sec
+    wb = openpyxl.reader.excel.load_workbook(filename=path_to_old + old_list)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 344, in load_workbook
+    reader = ExcelReader(filename, read_only, keep_vba,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 123, in __init__
+    self.archive = _validate_archive(fn)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 95, in _validate_archive
+    archive = ZipFile(filename, 'r')
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1299, in __init__
+    self._RealGetContents()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1366, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+2024-03-12 02:43:19,051-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 18, in your_ajax_view
+    create_time(year)
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 20, in create_time
+    blocks, info_elem = parser_v2_test(path_after_rename, plst_in[i], chanel_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 177, in parser_v2_test
+    temp_green = find_green_ranges(temp_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 74, in find_green_ranges
+    workbook = openpyxl.load_workbook(filename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 346, in load_workbook
+    reader.read()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 287, in read
+    self.read_manifest()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1507, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1562, in open
+    raise BadZipFile("Truncated file header")
+zipfile.BadZipFile: Truncated file header
+2024-03-12 02:43:20,392-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 84, in test_ajax_log
+    result_sec = check_sec(temp_path_out, plst_output[i], temp_path_input, plst_input[i])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 770, in check_sec
+    wb = openpyxl.reader.excel.load_workbook(filename=path_to_old + old_list)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 346, in load_workbook
+    reader.read()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 287, in read
+    self.read_manifest()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 134, in read_manifest
+    src = self.archive.read(ARC_CONTENT_TYPES)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1507, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1562, in open
+    raise BadZipFile("Truncated file header")
+zipfile.BadZipFile: Truncated file header
+2024-03-12 02:43:20,744-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 84, in test_ajax_log
+    result_sec = check_sec(temp_path_out, plst_output[i], temp_path_input, plst_input[i])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 770, in check_sec
+    wb = openpyxl.reader.excel.load_workbook(filename=path_to_old + old_list)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 346, in load_workbook
+    reader.read()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 289, in read
+    self.read_strings()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 147, in read_strings
+    self.shared_strings = reader(src)
+                          ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\strings.py", line 16, in read_string_table
+    for _, node in iterparse(xml_source):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\xml\etree\ElementTree.py", line 1251, in iterator
+    data = source.read(16 * 1024)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 951, in read
+    data = self._read1(n)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1019, in _read1
+    data += self._read2(n - len(data))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1054, in _read2
+    raise EOFError
+EOFError
+2024-03-12 03:18:56,739-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 18, in your_ajax_view
+    create_time(year)
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 20, in create_time
+    blocks, info_elem = parser_v2_test(path_after_rename, plst_in[i], chanel_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 177, in parser_v2_test
+    temp_green = find_green_ranges(temp_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 74, in find_green_ranges
+    workbook = openpyxl.load_workbook(filename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 346, in load_workbook
+    reader.read()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 301, in read
+    self.read_worksheets()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 214, in read_worksheets
+    for sheet, rel in self.parser.find_sheets():
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\workbook.py", line 86, in find_sheets
+    yield sheet, self.rels[sheet.id]
+                 ^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\workbook.py", line 39, in rels
+    self._rels = get_dependents(self.archive, get_rels_path(self.workbook_part_name))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\packaging\relationship.py", line 125, in get_dependents
+    src = archive.read(filename)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1507, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1562, in open
+    raise BadZipFile("Truncated file header")
+zipfile.BadZipFile: Truncated file header
+2024-03-12 03:18:56,758-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 18, in your_ajax_view
+    create_time(year)
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 20, in create_time
+    blocks, info_elem = parser_v2_test(path_after_rename, plst_in[i], chanel_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 177, in parser_v2_test
+    temp_green = find_green_ranges(temp_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 74, in find_green_ranges
+    workbook = openpyxl.load_workbook(filename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 344, in load_workbook
+    reader = ExcelReader(filename, read_only, keep_vba,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 123, in __init__
+    self.archive = _validate_archive(fn)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 95, in _validate_archive
+    archive = ZipFile(filename, 'r')
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1299, in __init__
+    self._RealGetContents()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1366, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+2024-03-12 03:18:56,817-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 18, in your_ajax_view
+    create_time(year)
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 20, in create_time
+    blocks, info_elem = parser_v2_test(path_after_rename, plst_in[i], chanel_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 177, in parser_v2_test
+    temp_green = find_green_ranges(temp_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 74, in find_green_ranges
+    workbook = openpyxl.load_workbook(filename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 346, in load_workbook
+    reader.read()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 301, in read
+    self.read_worksheets()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 233, in read_worksheets
+    fh = self.archive.open(rel.target)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1562, in open
+    raise BadZipFile("Truncated file header")
+zipfile.BadZipFile: Truncated file header
+2024-03-12 03:18:56,856-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 84, in test_ajax_log
+    result_sec = check_sec(temp_path_out, plst_output[i], temp_path_input, plst_input[i])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 770, in check_sec
+    wb = openpyxl.reader.excel.load_workbook(filename=path_to_old + old_list)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 346, in load_workbook
+    reader.read()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 301, in read
+    self.read_worksheets()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 237, in read_worksheets
+    ws_parser.bind_all()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\worksheet\_reader.py", line 465, in bind_all
+    self.bind_cells()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\worksheet\_reader.py", line 368, in bind_cells
+    for idx, row in self.parser.parse():
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\worksheet\_reader.py", line 156, in parse
+    for _, element in it:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\xml\etree\ElementTree.py", line 1251, in iterator
+    data = source.read(16 * 1024)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 951, in read
+    data = self._read1(n)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1019, in _read1
+    data += self._read2(n - len(data))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1054, in _read2
+    raise EOFError
+EOFError
+2024-03-12 03:18:57,641-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 18, in your_ajax_view
+    create_time(year)
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 20, in create_time
+    blocks, info_elem = parser_v2_test(path_after_rename, plst_in[i], chanel_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 177, in parser_v2_test
+    temp_green = find_green_ranges(temp_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 74, in find_green_ranges
+    workbook = openpyxl.load_workbook(filename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 346, in load_workbook
+    reader.read()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 301, in read
+    self.read_worksheets()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 237, in read_worksheets
+    ws_parser.bind_all()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\worksheet\_reader.py", line 465, in bind_all
+    self.bind_cells()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\worksheet\_reader.py", line 368, in bind_cells
+    for idx, row in self.parser.parse():
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\worksheet\_reader.py", line 156, in parse
+    for _, element in it:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\xml\etree\ElementTree.py", line 1251, in iterator
+    data = source.read(16 * 1024)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 951, in read
+    data = self._read1(n)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1019, in _read1
+    data += self._read2(n - len(data))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1054, in _read2
+    raise EOFError
+EOFError
+2024-03-12 03:18:58,882-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 84, in test_ajax_log
+    result_sec = check_sec(temp_path_out, plst_output[i], temp_path_input, plst_input[i])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 770, in check_sec
+    wb = openpyxl.reader.excel.load_workbook(filename=path_to_old + old_list)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 344, in load_workbook
+    reader = ExcelReader(filename, read_only, keep_vba,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 123, in __init__
+    self.archive = _validate_archive(fn)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 95, in _validate_archive
+    archive = ZipFile(filename, 'r')
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1299, in __init__
+    self._RealGetContents()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1366, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+2024-03-12 03:18:58,937-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 84, in test_ajax_log
+    result_sec = check_sec(temp_path_out, plst_output[i], temp_path_input, plst_input[i])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 770, in check_sec
+    wb = openpyxl.reader.excel.load_workbook(filename=path_to_old + old_list)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 344, in load_workbook
+    reader = ExcelReader(filename, read_only, keep_vba,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 123, in __init__
+    self.archive = _validate_archive(fn)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 95, in _validate_archive
+    archive = ZipFile(filename, 'r')
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1299, in __init__
+    self._RealGetContents()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1366, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+2024-03-12 03:18:58,970-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 18, in your_ajax_view
+    create_time(year)
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 20, in create_time
+    blocks, info_elem = parser_v2_test(path_after_rename, plst_in[i], chanel_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 177, in parser_v2_test
+    temp_green = find_green_ranges(temp_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 74, in find_green_ranges
+    workbook = openpyxl.load_workbook(filename)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 346, in load_workbook
+    reader.read()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 301, in read
+    self.read_worksheets()
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 214, in read_worksheets
+    for sheet, rel in self.parser.find_sheets():
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\workbook.py", line 86, in find_sheets
+    yield sheet, self.rels[sheet.id]
+                 ^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\workbook.py", line 39, in rels
+    self._rels = get_dependents(self.archive, get_rels_path(self.workbook_part_name))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\packaging\relationship.py", line 125, in get_dependents
+    src = archive.read(filename)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1507, in read
+    with self.open(name, "r", pwd) as fp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1562, in open
+    raise BadZipFile("Truncated file header")
+zipfile.BadZipFile: Truncated file header
+2024-03-12 03:46:29,594-WARNING-Not Found: /favicon.ico
+2024-03-12 03:48:54,712-WARNING-Not Found: /favicon.ico
+2024-03-12 03:52:11,478-WARNING-Not Found: /favicon.ico
+2024-03-12 04:26:15,627-WARNING-Not Found: /favicon.ico
+2024-03-12 04:43:06,053-WARNING-Not Found: /favicon.ico
+2024-03-12 04:50:25,256-WARNING-Not Found: /favicon.ico
+2024-03-12 04:55:02,017-WARNING-Not Found: /favicon.ico
+2024-03-12 05:03:37,899-WARNING-Not Found: /favicon.ico
+2024-03-12 05:24:17,434-WARNING-Not Found: /favicon.ico
+2024-03-12 05:32:44,959-WARNING-Not Found: /favicon.ico
+2024-03-12 05:33:04,647-WARNING-Not Found: /favicon.ico
+2024-03-12 05:44:52,428-WARNING-Not Found: /favicon.ico
+2024-03-12 05:51:23,469-WARNING-Not Found: /favicon.ico
+2024-03-12 05:54:14,365-WARNING-Not Found: /favicon.ico
+2024-03-12 05:55:07,259-WARNING-Not Found: /favicon.ico
+2024-03-12 06:10:51,690-WARNING-Not Found: /favicon.ico
+2024-03-12 06:41:28,175-WARNING-Not Found: /favicon.ico
+2024-03-12 06:43:44,090-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py changed, reloading.
+2024-03-12 06:43:49,432-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py changed, reloading.
+2024-03-12 06:44:00,544-WARNING-Not Found: /favicon.ico
+2024-03-12 07:02:25,509-WARNING-Not Found: /favicon.ico
+2024-03-12 07:35:57,409-WARNING-Not Found: /favicon.ico
+2024-03-12 07:38:02,518-WARNING-Not Found: /favicon.ico
+2024-03-12 07:40:28,603-WARNING-Not Found: /favicon.ico
+2024-03-12 07:41:01,215-WARNING-Not Found: /favicon.ico
+2024-03-12 07:50:48,869-WARNING-Not Found: /favicon.ico
+2024-03-12 07:51:17,784-WARNING-Not Found: /favicon.ico
+2024-03-12 07:51:48,772-WARNING-Not Found: /favicon.ico
+2024-03-12 07:53:57,853-WARNING-Not Found: /favicon.ico
+2024-03-12 08:13:36,504-WARNING-Not Found: /favicon.ico
+2024-03-12 08:15:18,192-WARNING-Not Found: /favicon.ico
+2024-03-12 08:16:27,245-WARNING-Not Found: /favicon.ico
+2024-03-12 08:30:44,549-WARNING-Not Found: /favicon.ico
+2024-03-12 08:31:01,605-WARNING-Not Found: /favicon.ico
+2024-03-12 08:31:23,461-WARNING-Not Found: /favicon.ico
+2024-03-12 08:31:42,345-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py changed, reloading.
+2024-03-15 14:18:32,303-WARNING-Not Found: /favicon.ico
+2024-03-15 14:19:50,823-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 18, in your_ajax_view
+    create_time(year)
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 20, in create_time
+    blocks, info_elem = parser_v2_test(path_after_rename, plst_in[i], chanel_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 213, in parser_v2_test
+    while i + 1 < len(result_green) and abs(time_to_seconds(result_green[i + 1][0]) - time_to_seconds(
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<=' not supported between instances of 'int' and 'str'
+2024-03-15 14:19:50,830-ERROR-Internal Server Error: /signal_media/your_ajax_url/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 18, in your_ajax_view
+    create_time(year)
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\main.py", line 20, in create_time
+    blocks, info_elem = parser_v2_test(path_after_rename, plst_in[i], chanel_name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 213, in parser_v2_test
+    while i + 1 < len(result_green) and abs(time_to_seconds(result_green[i + 1][0]) - time_to_seconds(
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<=' not supported between instances of 'int' and 'str'
+2024-03-15 14:20:10,631-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py changed, reloading.
+2024-03-15 14:20:27,960-INFO-Ошибка при обработке файла  Excel: signal_media\temp\schedule\\~$20240220_МП.xlsx
+2024-03-15 14:20:27,963-INFO-[Errno 13] Permission denied: 'signal_media\\temp\\schedule\\\\~$20240220_МП.xlsx'
+2024-03-15 14:20:27,963-INFO-//////////Ошибка при обработке файла Excel: signal_media\temp\schedule\\~$20240220_МП.xlsx//////////////
+2024-03-15 14:20:28,209-INFO-Ошибка при обработке файла  Excel: signal_media\temp\schedule\\~$20240220_МП.xlsx
+2024-03-15 14:20:28,210-INFO-[Errno 13] Permission denied: 'signal_media\\temp\\schedule\\\\~$20240220_МП.xlsx'
+2024-03-15 14:20:28,210-INFO-//////////Ошибка при обработке файла Excel: signal_media\temp\schedule\\~$20240220_МП.xlsx//////////////
+2024-03-15 14:20:37,445-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 99, in test_ajax_log
+    result_sec = check_sec(temp_path_out, plst_output[i], temp_path_input, plst_input[i])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 776, in check_sec
+    wb = openpyxl.reader.excel.load_workbook(filename=path_to_old + old_list)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 344, in load_workbook
+    reader = ExcelReader(filename, read_only, keep_vba,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 123, in __init__
+    self.archive = _validate_archive(fn)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 95, in _validate_archive
+    archive = ZipFile(filename, 'r')
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1281, in __init__
+    self.fp = io.open(file, filemode)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'signal_media\\temp\\schedule\\\\~$20240220_МП.xlsx'
+2024-03-15 14:20:37,884-ERROR-Internal Server Error: /signal_media/test_ajax_log/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\views.py", line 99, in test_ajax_log
+    result_sec = check_sec(temp_path_out, plst_output[i], temp_path_input, plst_input[i])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py", line 776, in check_sec
+    wb = openpyxl.reader.excel.load_workbook(filename=path_to_old + old_list)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 344, in load_workbook
+    reader = ExcelReader(filename, read_only, keep_vba,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 123, in __init__
+    self.archive = _validate_archive(fn)
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\django_docker\venv\Lib\site-packages\openpyxl\reader\excel.py", line 95, in _validate_archive
+    archive = ZipFile(filename, 'r')
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\zipfile.py", line 1281, in __init__
+    self.fp = io.open(file, filemode)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'signal_media\\temp\\schedule\\\\~$20240220_МП.xlsx'
+2024-03-15 14:23:43,426-INFO-C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\function.py changed, reloading.
+2024-03-15 15:34:05,586-WARNING-Not Found: /favicon.ico
+2024-03-15 15:34:08,174-WARNING-Not Found: /favicon.ico
+2024-03-15 15:34:51,565-WARNING-Not Found: /favicon.ico
+2024-03-15 16:18:27,359-WARNING-Not Found: /favicon.ico
+2024-03-15 16:25:20,423-WARNING-Not Found: /favicon.ico
+2024-03-15 16:25:23,471-WARNING-Not Found: /favicon.ico
+2024-03-15 16:26:55,093-WARNING-Not Found: /favicon.ico
+2024-03-15 16:28:24,083-WARNING-Not Found: /favicon.ico
+2024-03-15 17:03:20,116-WARNING-Not Found: /favicon.ico
+2024-03-15 17:04:08,929-WARNING-Not Found: /favicon.ico
+2024-03-15 17:04:23,027-WARNING-Not Found: /favicon.ico

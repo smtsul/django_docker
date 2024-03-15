@@ -21,5 +21,6 @@ from django.shortcuts import redirect
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('signal_media/',include('signal_media.urls')),
+    path('shot/',include('shot.urls')),
     path('', lambda request: redirect('signal_media/')),
 ]

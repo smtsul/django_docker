@@ -99,18 +99,17 @@ def find_green_ranges(filename):
 
 def read_settings(channel_name):
     config = configparser.ConfigParser()
-
     config.read(ini_path, encoding='UTF-8')
-
     sections_list = config.sections()
-
+    time_to_next = config.get('allPlst','second_to_next_block')
     spisok = config.get(channel_name, 'spisok')
     spisok_exception = config.get(channel_name, 'spisok_exception')
+
 
     spisok = [item.strip() for item in spisok.split(',')]
     spisok_exception = [item.strip() for item in spisok_exception.split(',')]
 
-    return spisok, spisok_exception
+    return spisok, spisok_exception,time_to_next
 
 
 def time_to_str(time):
@@ -149,12 +148,18 @@ def find_first_and_count(matrix, target):  # на вход список и чи�
 
 
 def parser_v2_test(path_to_old, old_list, chanel_name):
-    # input
+    '''
+    Функция для создания блоков с зелеными метками
+    :param path_to_old: 
+    :param old_list: 
+    :param chanel_name: 
+    :return: 
+    '''''
     # return result_green
 
     spisok, spisok_exception = [], []
     info = ''
-    spisok, spisok_exception = read_settings(chanel_name)
+    spisok, spisok_exception,time_to_next_block = read_settings(chanel_name)
     result_green, temp_green, temp_green_without_simvol = [], [], []
     if os.name == 'nt':
         temp_path = path_to_old + '\\' + old_list
@@ -205,7 +210,7 @@ def parser_v2_test(path_to_old, old_list, chanel_name):
         end = result_green[i][1]
 
         while i + 1 < len(result_green) and abs(time_to_seconds(result_green[i + 1][0]) - time_to_seconds(
-                end)) <= 30:  # 180 Если разница между блоками составляент меньше 180 секунд, то надо объеденить блоки
+                end)) <= int(time_to_next_block):  #  Если разница между блоками составляент меньше 30 секунд, то надо объеденить блоки
             end = result_green[i + 1][1]
             i += 1
 
@@ -822,4 +827,20 @@ def check_sec_to_min(path, filename):
 
 
 if __name__ == '__main__':
-    pass
+    play_list_dir = open_file(r'C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\input\\')
+    # for i in range(0, len(play_list_dir)):
+    #     rename_recopy(play_list_dir[i].split(), '2024')
+    blocks = []
+    plst_in = open_file(r'C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\schedule\\')
+    info = []
+    info_for_json = {'info': '',
+                     'error': ''}
+    for i in range(0, len(plst_in)):
+        chanel_name = plst_in[i].split("_")[-1].split(".")[0]
+        if chanel_name.lower() == 'нст':  # блядский костыль
+            chanel_name = "НСТ"
+        blocks, info_elem = parser_v2_test(r'C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\schedule\\', plst_in[i], chanel_name)
+        print(chanel_name)
+        print(blocks)
+        info.append(info_elem)
+

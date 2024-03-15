@@ -121,12 +121,6 @@ loggedBtn.on("click", function (event) {
 var checkPlaylistsBtn = $("#action");
 var errorBlock = $("#errorBlock"); // Получаем блок ошибок
 
-var checkPlaylistsBtn = $("#action");
-var errorBlock = $("#errorBlock"); // Получаем блок ошибок
-
-var checkPlaylistsBtn = $("#action");
-var errorBlock = $("#errorBlock"); // Получаем блок ошибок
-
 checkPlaylistsBtn.on("click", function (event) {
     event.preventDefault();
 
@@ -156,10 +150,71 @@ checkPlaylistsBtn.on("click", function (event) {
     );
 });
 
+/* $(document).ready(function () {
+    $(document).on('click', '.signal_mediaBtn', function (event) {
+        event.preventDefault();
+    // Добавляем новые элементы к форме
+    $("form").append('<p><input type="file" name="myfile" multiple accept=".xlsx"></p>');
+    $("form").append('<button type="submit" id="uploadBtn"> Загрузить </button>');
+    $("form").append('<input value="2024" type="text" id="year" name="year" required>');
+    $("body").append('<button type="button" id="renameBtn">Обработать плейлисты</button>');
+    $("form").append('<button type="submit" id="action" value="log">Проверить плейлисты</button>');
+    $("form").append('<button type="submit" id="logged" value="log">Очистить список</button>');
+    $("form").append('<button type="submit" id="test" value="test">test</button>');
 
+    // Добавляем созданные элементы к форме
+    var fileListContainer = $('<div>', {
+        class: 'file-list'
+    });
 
+    fileListContainer.append('<h2>Список плейлистов:</h2>');
 
+    var fileList = $('<ul>', {
+        id: 'fileList'
+    });
 
-    // Вызываем функцию для обновления списка файлов при загрузке страницы
-    updateFileList();
+    // Извлекаем данные из скрытого элемента
+    var tempBlocksData = JSON.parse($("#tempBlocks").text());
+
+    // Используем данные для построения списка файлов
+    tempBlocksData.forEach(function (file) {
+        fileList.append("<li><a href='#' class='download-link' data-filename='" + file + "'>" + file + "</a></li>");
+    });
+
+    fileListContainer.append(fileList);
+
+    // Добавляем контейнер с файлами и блок ошибок к flex-container
+    $('.flex-container').append(fileListContainer);
+    $('.flex-container').append('<div class="error-block" id="errorBlock">Cписок ошибок</div>');
+});
+});
+*/
+updateFileList();
+
+    // Обработчик события для кнопки "Загрузить"
+    document.getElementById('uploadBtn').addEventListener('click', function (event) {
+        event.preventDefault();
+
+        var inputElement = document.getElementById('myfile');
+        var files = inputElement.files;
+
+        var formData = new FormData();
+
+        for (var i = 0; i < files.length; i++) {
+            formData.append('myfile', files[i]);
+        }
+        fetch('/signal_media/upload_files/', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            // Обработайте успешный ответ, если необходимо
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Обработайте ошибку, если необходимо
+        });
+    });
 });

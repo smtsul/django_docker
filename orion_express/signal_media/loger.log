@@ -1,0 +1,30 @@
+2024-03-15 11:31:53,235-INFO-Ошибка при обработке файла  Excel: signal_media\temp\schedule\\20240215_Наука.xlsx
+2024-03-15 11:31:53,235-INFO-[Errno 2] No such file or directory: 'signal_media\\temp\\schedule\\\\20240215_Наука.xlsx'
+2024-03-15 11:31:53,235-INFO-//////////Ошибка при обработке файла Excel: signal_media\temp\schedule\\20240215_Наука.xlsx//////////////
+2024-03-15 11:31:53,236-INFO-Ошибка при обработке файла  Excel: signal_media\temp\schedule\\20240217_Наука.xlsx
+2024-03-15 11:31:53,236-INFO-[Errno 2] No such file or directory: 'signal_media\\temp\\schedule\\\\20240217_Наука.xlsx'
+2024-03-15 11:31:53,236-INFO-//////////Ошибка при обработке файла Excel: signal_media\temp\schedule\\20240217_Наука.xlsx//////////////
+2024-03-15 11:31:53,237-INFO-Ошибка при обработке файла  Excel: signal_media\temp\schedule\\20240218_Т24.xlsx
+2024-03-15 11:31:53,237-INFO-[Errno 2] No such file or directory: 'signal_media\\temp\\schedule\\\\20240218_Т24.xlsx'
+2024-03-15 11:31:53,237-INFO-//////////Ошибка при обработке файла Excel: signal_media\temp\schedule\\20240218_Т24.xlsx//////////////
+2024-03-15 11:31:53,238-INFO-Ошибка при обработке файла  Excel: signal_media\temp\schedule\\20240219_Наука.xlsx
+2024-03-15 11:31:53,238-INFO-[Errno 2] No such file or directory: 'signal_media\\temp\\schedule\\\\20240219_Наука.xlsx'
+2024-03-15 11:31:53,238-INFO-//////////Ошибка при обработке файла Excel: signal_media\temp\schedule\\20240219_Наука.xlsx//////////////
+2024-03-15 11:31:53,238-INFO-Ошибка при обработке файла  Excel: signal_media\temp\schedule\\20240220_Наука.xlsx
+2024-03-15 11:31:53,238-INFO-[Errno 2] No such file or directory: 'signal_media\\temp\\schedule\\\\20240220_Наука.xlsx'
+2024-03-15 11:31:53,238-INFO-//////////Ошибка при обработке файла Excel: signal_media\temp\schedule\\20240220_Наука.xlsx//////////////
+2024-03-15 12:28:56,498-INFO-Ошибка при обработке файла  Excel: C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\schedule\\\~$20240220_МП.xlsx
+2024-03-15 12:28:56,498-INFO-[Errno 13] Permission denied: 'C:\\Users\\User\\PycharmProjects\\django_docker\\orion_express\\signal_media\\temp\\schedule\\\\\\~$20240220_МП.xlsx'
+2024-03-15 12:28:56,498-INFO-//////////Ошибка при обработке файла Excel: C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\schedule\\\~$20240220_МП.xlsx//////////////
+2024-03-15 12:29:23,441-INFO-Ошибка при обработке файла  Excel: C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\schedule\\\~$20240220_МП.xlsx
+2024-03-15 12:29:23,442-INFO-[Errno 13] Permission denied: 'C:\\Users\\User\\PycharmProjects\\django_docker\\orion_express\\signal_media\\temp\\schedule\\\\\\~$20240220_МП.xlsx'
+2024-03-15 12:29:23,442-INFO-//////////Ошибка при обработке файла Excel: C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\schedule\\\~$20240220_МП.xlsx//////////////
+2024-03-15 12:37:30,450-INFO-Ошибка при обработке файла  Excel: C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\schedule\\\~$20240220_МП.xlsx
+2024-03-15 12:37:30,450-INFO-[Errno 13] Permission denied: 'C:\\Users\\User\\PycharmProjects\\django_docker\\orion_express\\signal_media\\temp\\schedule\\\\\\~$20240220_МП.xlsx'
+2024-03-15 12:37:30,450-INFO-//////////Ошибка при обработке файла Excel: C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\schedule\\\~$20240220_МП.xlsx//////////////
+2024-03-15 12:38:16,215-INFO-Ошибка при обработке файла  Excel: C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\schedule\\\~$20240220_МП.xlsx
+2024-03-15 12:38:16,215-INFO-[Errno 13] Permission denied: 'C:\\Users\\User\\PycharmProjects\\django_docker\\orion_express\\signal_media\\temp\\schedule\\\\\\~$20240220_МП.xlsx'
+2024-03-15 12:38:16,215-INFO-//////////Ошибка при обработке файла Excel: C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\schedule\\\~$20240220_МП.xlsx//////////////
+2024-03-15 13:59:13,933-INFO-Ошибка при обработке файла  Excel: C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\schedule\\\~$20240220_МП.xlsx
+2024-03-15 13:59:13,933-INFO-[Errno 13] Permission denied: 'C:\\Users\\User\\PycharmProjects\\django_docker\\orion_express\\signal_media\\temp\\schedule\\\\\\~$20240220_МП.xlsx'
+2024-03-15 13:59:13,933-INFO-//////////Ошибка при обработке файла Excel: C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\schedule\\\~$20240220_МП.xlsx//////////////
