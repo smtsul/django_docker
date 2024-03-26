@@ -9,17 +9,17 @@
     </title>
 </head>
 <body>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-</form>
 <link rel="stylesheet" href="/static/signal_media/css/style.css">
 <script defer src="/static/signal_media/js/jquery-3.7.1.js"></script>
 <script defer src="/static/signal_media/js/ajax.js"></script>
+
+
 <div id="tempBlocks" style="display: none;">{{ temp_blocks|safe }}</div>
 
 <nav class="sitetoolbar sitetoolbar_tutorial">
     <ul class="sitetoolbar__sections-list">
-        <li class="sitetoolbar__section sitetoolbar__section_current"><a class="sitetoolbar__link" href="{% url 'signal_media:edit_setting' %}">Настройки</a>
+        <li class="sitetoolbar__section sitetoolbar__section_current"><a class="sitetoolbar__link"
+                                                                         href="{% url 'signal_media:edit_setting' %}">Настройки</a>
         </li>
         <li class="sitetoolbar__section sitetoolbar__section_dropdown">
             <button class="sitetoolbar__dropdown-button" data-dropdown-toggler="">Парсеры</button>
@@ -28,20 +28,23 @@
                     <ul class="sitetoolbar__dropdown-items">
                         <li class="sitetoolbar__dropdown-item"><a
                                 class="sitetoolbar__secondary-link sitetoolbar__dropdown-link"
-                                href="{% url 'signal_media:upload_files' %}">Сигнал Медиа</a></li>
+                                href="{% url 'shot:index' %}">Шот ТВ</a></li>
                         <li class="sitetoolbar__dropdown-item"><a
                                 class="sitetoolbar__secondary-link sitetoolbar__dropdown-link"
-                                href="{% url 'shot:index' %}">Шот ТВ</a></li>
-                        <!-- <li class="sitetoolbar__dropdown-item">
-                        <a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link signal_mediaBtn" href="#">
-                            Signal Media JS</a>
-                        </li> -->
+                                href="{% url 'signal_media:upload_files' %}">Сигнал-меда</a></li>
+                        <li class="sitetoolbar__dropdown-item">
+                            <a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link signal_mediaBtn" href="#">
+                                Signal Media JS|test</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </li>
     </ul>
 </nav>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+</form>
 {% block body %}
 
 {% endblock %}

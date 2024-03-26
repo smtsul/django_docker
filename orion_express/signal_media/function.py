@@ -13,12 +13,16 @@ logging.basicConfig(format='%(asctime)s-%(levelname)s-%(message)s',
 
 
 def open_file(dir):
+    """
+    Функция возразает массив из
+    """
     files = os.listdir(dir)
     return files
 
 
-# Запись списка в файл
+
 def write_list_to_file(data, file_name):
+    # Запись списка в файл
     try:
         with open(file_name, 'w') as file:
             for item in data:
@@ -28,8 +32,9 @@ def write_list_to_file(data, file_name):
         return e
 
 
-# Чтение списка из файла
+
 def read_list_from_file(file_name):
+    # Чтение списка из файла
     try:
         with open(file_name, 'r') as file:
             lines = file.readlines()
@@ -44,7 +49,6 @@ def write_blocks_to_file(blocks, file_path, old_name):
     new_file_name = new_file_name[:4] + "-" + new_file_name[4:6] + '-' + new_file_name[
                                                                          6:]  # Добавляем дефис между годом и месяцем
     csv_file_path = os.path.join(file_path, new_file_name)
-
     with open(csv_file_path, 'w', newline='', encoding='Windows-1251') as file:
         first_video = True
         for block in blocks:
@@ -101,15 +105,12 @@ def read_settings(channel_name):
     config = configparser.ConfigParser()
     config.read(ini_path, encoding='UTF-8')
     sections_list = config.sections()
-    time_to_next = config.get('allPlst','second_to_next_block')
+    time_to_next = config.get('allPlst', 'second_to_next_block')
     spisok = config.get(channel_name, 'spisok')
     spisok_exception = config.get(channel_name, 'spisok_exception')
-
-
     spisok = [item.strip() for item in spisok.split(',')]
     spisok_exception = [item.strip() for item in spisok_exception.split(',')]
-
-    return spisok, spisok_exception,time_to_next
+    return spisok, spisok_exception, time_to_next
 
 
 def time_to_str(time):
@@ -150,23 +151,18 @@ def find_first_and_count(matrix, target):  # на вход список и чи�
 def parser_v2_test(path_to_old, old_list, chanel_name):
     '''
     Функция для создания блоков с зелеными метками
-    :param path_to_old: 
-    :param old_list: 
-    :param chanel_name: 
-    :return: 
     '''''
-    # return result_green
-
     spisok, spisok_exception = [], []
     info = ''
-    spisok, spisok_exception,time_to_next_block = read_settings(chanel_name)
+    spisok, spisok_exception, time_to_next_block = read_settings(chanel_name)
     result_green, temp_green, temp_green_without_simvol = [], [], []
     if os.name == 'nt':
         temp_path = path_to_old + '\\' + old_list
     elif os.name == 'posix':
         temp_path = path_to_old + '//' + old_list
     '''Открываем файл, проверяем двойным условием,
-     должен быть зеленый+ выше должны быть ключевые слова vimb,кросс промо и.т.д.'''
+     должен быть зеленый+ выше должны быть ключевые слова vimb,кросс промо и.т.д.
+     '''
     try:
         wb = openpyxl.reader.excel.load_workbook(filename=temp_path)
         sheets_list = wb.sheetnames
@@ -199,8 +195,6 @@ def parser_v2_test(path_to_old, old_list, chanel_name):
             cell_value = sheet.cell(row=temp_green_without_simvol[i][j], column=1).value
             temp_row.append(cell_value[:-3])
         result_green.append(temp_row)
-    # Добавляем длительность
-
     durations = []
     # объеденяем блоки
     result_green_v2 = []
@@ -208,12 +202,11 @@ def parser_v2_test(path_to_old, old_list, chanel_name):
     while i < len(result_green):
         start = result_green[i][0]
         end = result_green[i][1]
-
         while i + 1 < len(result_green) and abs(time_to_seconds(result_green[i + 1][0]) - time_to_seconds(
-                end)) <= int(time_to_next_block):  #  Если разница между блоками составляент меньше 30 секунд, то надо объеденить блоки
+                end)) <= int(
+            time_to_next_block):  # Если разница между блоками составляент меньше 30 секунд, то надо объеденить блоки
             end = result_green[i + 1][1]
             i += 1
-
         result_green_v2.append([start, end])
         i += 1
     # конец костыля
@@ -231,12 +224,11 @@ def parser_v2_test(path_to_old, old_list, chanel_name):
             result_green_v2[i].append(durations[i])
     blocks_str = ''
     blocks_result = []
-    # blocks_result = create_blocks_v4(video_file, result_green_v2, chanel_name)
     return result_green_v2, info
 
 
-def create_blocks_v4_sarafan(path_to_video, result_green, chanel_name):  # out list
-    # Если надо меньше роликов в блоке, в резинке
+def create_blocks_v4_sarafan(path_to_video, result_green, chanel_name):
+    # out list
     # Открытие Excel-файла с роликами и их длительностью
     workbook = openpyxl.load_workbook(path_to_video)
     sheet = workbook.active
@@ -378,9 +370,13 @@ def create_blocks_v4_sarafan(path_to_video, result_green, chanel_name):  # out l
     return rand_block_result
 
 
-def create_blocks_v4_rand(path_to_video, result_green, chanel_name):  # out list
-    # Если надо меньше роликов в блоке, в резинке
-    # Открытие Excel-файла с роликами и их длительностью
+def create_blocks_v4_rand(path_to_video, result_green, chanel_name):
+    """
+    Функция для обработки плейлистов с рандомными роликами в блоках, чтобы каждый день в одно и тоже время не играли одни и те же блоки
+    path_to_video : путь до файла со списком роликов для блоков
+    result_green : массив с временем, который надо заменить, по сути файл из папки dir_for_blocks
+    result_green : название канала
+    """
     workbook = openpyxl.load_workbook(path_to_video)
     sheet = workbook.active
     sheet = workbook[chanel_name]
@@ -442,8 +438,7 @@ def create_blocks_v4_rand(path_to_video, result_green, chanel_name):  # out list
                         rand_block_result.append(block)
                         dur_temp -= videos_rezinka_sorted[count][1]
                 # конец костыля
-                while dur_temp > 0:  # nado horosho podumat
-                    # Создаем новый блок с резиновой и добавляем его в список blocks
+                while dur_temp > 0: # Создаем новый блок с резиновой и добавляем его в список blocks
                     block = [
                         result_green[i][0],
                         videos_rezinka_sorted[count][0],
@@ -453,22 +448,21 @@ def create_blocks_v4_rand(path_to_video, result_green, chanel_name):  # out list
                     rand_block_result.append(block)
                     dur_temp -= videos_rezinka_sorted[count][1]
                     count -= 1
-                    # if count == len(videos_rezinka_sorted):
-                    #     count = 0
+
                     if count == 0:
                         count = len(videos_rezinka_sorted) - 1  # reload
     return rand_block_result
 
 
 def plst_to_log():
-    # TODO подумать куда вставить, доделать
-
+    """
+    Функция для переноса файлов из папок input,outter, dir_for_blocks в log,
+    так же добавляет время в названии файла
+    """
     src = [path_before, path_after_rename, path_to_out, path_to_out, dir_for_blocks]
     trg = path_to_log
-
     try:
         count = 0
-
         for i in range(len(src)):
             files = os.listdir(src[i])
             print(files)
@@ -476,32 +470,28 @@ def plst_to_log():
                 current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
                 shutil.copy2(os.path.join(src[i], fname), os.path.join(trg, current_time + fname))
                 count += 1
-
             shutil.rmtree(src[i])
             os.mkdir(src[i])
-
         result = {'error': False, 'message': f'Был очищен список, там было {count} файлов'}
     except Exception as e:
         result = {'error': True, 'message': str(e)}
-
     return result
 
 
-def rename_recopy(file_name, year):  # функция переимонования из исходного для такого, что подходит кзплу # работает со
-    # всеми каналами, но название должно быть такого вида:
-    # Путевка Сарафан (Орион) 17.07.22.xlsx
-    # Путевка (Орион) МУЛЬТ HD 17.07.2022.xlsx
-    # Путевка (Орион) Синема на 18.07.2022.xlsx
-    # Путевка (Орион) НСТ на 18.07.2022.xlsx
-    # Наука 18.07.xlsx
-    # МП 17.07.xlsx
-    # Т24 17.07.xlsx
+def rename_recopy(file_name, year):
+    """Функция переименования плейлистов, нужна для дополнительной проверки по имени
+    работает со всеми каналами, но название должно быть такого вида:
+    Путевка Сарафан (Орион) 17.07.22.xlsx
+    Путевка (Орион) МУЛЬТ HD 17.07.2022.xlsx
+    Путевка (Орион) Синема на 18.07.2022.xlsx
+    Путевка (Орион) НСТ на 18.07.2022.xlsx
+    Наука 18.07.xlsx
+    МП 17.07.xlsx
+    Т24 17.07.xlsx"""
     os.makedirs(os.path.dirname(path_after_rename), exist_ok=True)
     os.makedirs(os.path.dirname(path_to_out), exist_ok=True)
     os.makedirs(os.path.dirname(dir_for_blocks), exist_ok=True)
     os.makedirs(path_to_log, exist_ok=True)
-    print(path_to_log)
-
     temp_name_file = ' '.join(file_name)
     temp = file_name[-1].split('.')  # тут хранится дата(индекс от 0 до 2-х и 3-ый индекс-расширение
     if len(temp[2]) == 2:
@@ -544,187 +534,69 @@ def rename_recopy(file_name, year):  # функция переимоновани
                         path_after_rename + res)  # берет файл из одной папки и копирует в ту же
 
 
-def rename_recopy_v2(file_name, year):
-    # функция переимонования из исходного для такоого, что подходит кзплу # работает со
-    # всеми каналами, но название должно быть такого вида:
-    # Путевка Сарафан (Орион) 17.07.22.xlsx
-    # Путевка (Орион) МУЛЬТ HD 17.07.2022.xlsx
-    # Путевка (Орион) Синема на 18.07.2022.xlsx
-    # Путевка (Орион) НСТ на 18.07.2022.xlsx
-    # Наука 18.07.xlsx
-    # МП 17.07.xlsx
-    # Т24 17.07.xlsx
+"""
+Работа с файлами:
+Копирование на кодеры,тесты и.т.д.
+"""
 
-    if file_name[len(file_name) - 1] == 'xls':
-        print('xyeta ')
-
-    temp_name_file = '_'.join(file_name)
-    temp = file_name[-1].split('.')  # тут хранится дата(индекс от 0 до 2-х и 3-ый индекс-расширение
-    if len(temp[2]) == 2:
-        temp[2] = '20' + temp[2]
-    if file_name[0] == 'Путевка' and file_name[1].lower() == 'сарафан'.lower():  # проверка, с той путевкой мы работаем
-        print('asd')
-        temp = temp[2], temp[1], temp[0], '_', file_name[1], '.', temp[3]
-        res = ''.join(temp)
-        shutil.copyfile(path_before + temp_name_file,
-                        path_after_rename + res)  # берет файл из одной папки и копирует в ту же
-    elif file_name[0] == 'Путевка' and file_name[2].lower() == 'МУЛЬТ'.lower():
-        temp = temp[2], temp[1], temp[0], '_', file_name[2].capitalize(), '.', temp[3]
-        res = ''.join(temp)
-        shutil.copyfile(path_before + temp_name_file,
-                        path_after_rename + res)  # берет файл из одной папки и копирует в ту же
-    elif file_name[0] == 'Путевка' and file_name[2].lower() == 'нст':
-        temp = temp[2], temp[1], temp[0], '_', file_name[2].capitalize(), '.', temp[3]
-        res = ''.join(temp)
-        shutil.copyfile(path_before + temp_name_file,
-                        path_after_rename + res)  # берет файл из одной папки и копирует в ту же
-    elif file_name[0] == 'Путевка' and file_name[2].lower() == 'синема':
-        temp = temp[2], temp[1], temp[0], '_', 'CINEMA', '.', temp[3]
-        res = ''.join(temp)
-        shutil.copyfile(path_before + temp_name_file,
-                        path_after_rename + res)  # берет файл из одной папки и копирует в ту же
-    elif file_name[0].lower() == 'наука':  # проверка, с той ли путевкой  мы работаем
-        temp = str(year), temp[1], temp[0], '_', file_name[0], '.', temp[2]
-        res = ''.join(temp)
-        shutil.copyfile(path_before + temp_name_file,
-                        path_after_rename + res)  # берет файл из одной папки и копирует в ту же
-    elif file_name[0].lower() == 'Т24'.lower():  # проверка, с той ли путевкой  мы работаем
-        temp = str(year), temp[1], temp[0], '_', file_name[0], '.', temp[2]
-        res = ''.join(temp)
-        shutil.copyfile(path_before + temp_name_file,
-                        path_after_rename + res)  # берет файл из одной папки и копирует в ту же
-    elif file_name[0].lower() == 'МП'.lower():  # проверка, с той ли путевкой  мы работаем
-        temp = str(year), temp[1], temp[0], '_', file_name[0], '.', temp[2]
-        res = ''.join(temp)
-        shutil.copyfile(path_before + temp_name_file,
-                        path_after_rename + res)  # берет файл из одной папки и копирует в ту же
-
-
-'''Работа с файлами:
-Копирование на сервера, проверка на корректность, и.т.д.'''
-
-
-def open_file(dir):
-    files = os.listdir(dir)
-    return files
-
-
-def copy_after_kzpl(file_name):  # на плейлисты из папки out, раскидываем по резервным серверам
-    # s=file_name.split('.')
-    if 'мп'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_to_out + file_name[0],
-                        hd_out_osn + 'MyPlanetHD/' + file_name[
-                            0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_to_out + file_name[0],
-                        hd_out_reserve + 'MyPlanetHD/' + file_name[0])
-    elif 'сарафан'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_to_out + file_name[0],  # берет файл из одной папки и копирует в сервер #hd osn
-                        sd_out_osn + 'Сарафан/' + file_name[0])
-        shutil.copyfile(path_to_out + file_name[0],
-                        sd_out_reserve + 'Сарафан/' + file_name[0])
-    elif 'наука'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_to_out + file_name[0],
-                        hd_out_osn + 'NaukaHD/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_to_out + file_name[0],
-                        hd_out_reserve + 'NaukaHD/' + file_name[0])
-    elif 'мульт'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_to_out + file_name[0],
-                        hd_out_osn + 'MultHD/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_to_out + file_name[0],
-                        hd_out_reserve + 'MultHD/' + file_name[0])
-    elif 'нст'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_to_out + file_name[0],
-                        sd_out_osn + 'NST/' + file_name[0])
-        shutil.copyfile(path_to_out + file_name[0],
-                        sd_out_reserve + 'NST/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
-    elif 'cinema'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_to_out + file_name[0],
-                        sd_out_osn + 'Cinema/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_to_out + file_name[0],
-                        sd_out_reserve + 'Cinema/' + file_name[0])
-    elif 'т24'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_to_out + file_name[0],
-                        sd_out_osn + 'Techno24/' + file_name[
-                            0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_to_out + file_name[0],
-                        sd_out_reserve + 'Techno24/' + file_name[0])
-
-
-def copy_after_kzpl_all(file_name):  # на плейлисты из папки out, раскидываем по серверам
-    # s=file_name.split('.')
-    if 'мп'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_to_out + file_name[0],
-                        hd_out_osn + 'MyPlanetHD/' + file_name[
-                            0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_to_out + file_name[0],
-                        hd_out_reserve + 'MyPlanetHD/' + file_name[0])
-    elif 'сарафан'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_to_out + file_name[0],  # берет файл из одной папки и копирует в сервер #hd osn
-                        sd_out_osn + 'Сарафан/' + file_name[0])
-        shutil.copyfile(path_to_out + file_name[0],
-                        sd_out_reserve + 'Сарафан/' + file_name[0])
-    elif 'наука'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_to_out + file_name[0],
-                        hd_out_osn + 'NaukaHD/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_to_out + file_name[0],
-                        hd_out_reserve + 'NaukaHD/' + file_name[0])
-    elif 'мульт'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_to_out + file_name[0],
-                        hd_out_osn + 'MultHD/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_to_out + file_name[0],
-                        hd_out_reserve + 'MultHD/' + file_name[0])
-    elif 'нст'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_to_out + file_name[0],
-                        sd_out_osn + 'NST/' + file_name[0])
-        shutil.copyfile(path_to_out + file_name[0],
-                        sd_out_reserve + 'NST/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
-    elif 'cinema'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_to_out + file_name[0],
-                        sd_out_osn + 'Cinema/' + file_name[0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_to_out + file_name[0],
-                        sd_out_reserve + 'Cinema/' + file_name[0])
-    elif 'т24'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
-        shutil.copyfile(path_to_out + file_name[0],
-                        sd_out_osn + 'Techno24/' + file_name[
-                            0])  # берет файл из одной папки и копирует в сервер #hd osn
-        shutil.copyfile(path_to_out + file_name[0],
-                        sd_out_reserve + 'Techno24/' + file_name[0])
-
-
-def sort_to_check(plst_to_sort):  # на плейлисты из папки out, раскидываем по серверам
-    # s=file_name.split('.')
-    new_plst = []
-    count = 0
-    for i in range(0, len(plst_to_sort)):
-        if 'мп'.lower() in plst_to_sort[i].lower():
-            new_plst.append(plst_to_sort[i])
-    for i in range(0, len(plst_to_sort)):
-        if 'сарафан'.lower() in plst_to_sort[i].lower():
-            new_plst.append(plst_to_sort[i])
-    for i in range(0, len(plst_to_sort)):
-        if 'наука'.lower() in plst_to_sort[i].lower():
-            new_plst.append(plst_to_sort[i])
-    for i in range(0, len(plst_to_sort)):
-        if 'мульт'.lower() in plst_to_sort[i].lower():
-            new_plst.append(plst_to_sort[i])
-    for i in range(0, len(plst_to_sort)):
-        if 'нст'.lower() in plst_to_sort[i].lower():
-            new_plst.append(plst_to_sort[i])
-    for i in range(0, len(plst_to_sort)):
-        if 'cinema'.lower() in plst_to_sort[i].lower():
-            new_plst.append(plst_to_sort[i])
-    for i in range(0, len(plst_to_sort)):
-        if 'т24'.lower() in plst_to_sort[i].lower():
-            new_plst.append(plst_to_sort[i])
-    return plst_to_sort
-
-
-'''
-Тестирование плейлистов
-'''
+def copy_after_my_parser(file_name):
+    """
+    Функция для копирования плейлистов в кодеры.
+    Если есть ошибки, то их выводим, если ошибок нет, то не выводим ничего.
+    """
+    result = None
+    try:
+        if 'мп'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
+            shutil.copyfile(path_to_out + file_name[0],
+                            hd_out_osn + 'MyPlanetHD/' + file_name[
+                                0])  # берет файл из одной папки и копирует в сервер #hd osn
+            shutil.copyfile(path_to_out + file_name[0],
+                            hd_out_reserve + 'MyPlanetHD/' + file_name[0])
+        elif 'сарафан'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
+            shutil.copyfile(path_to_out + file_name[0],  # берет файл из одной папки и копирует в сервер #hd osn
+                            sd_out_osn + 'Сарафан/' + file_name[0])
+            shutil.copyfile(path_to_out + file_name[0],
+                            sd_out_reserve + 'Сарафан/' + file_name[0])
+        elif 'наука'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
+            shutil.copyfile(path_to_out + file_name[0],
+                            hd_out_osn + 'NaukaHD/' + file_name[
+                                0])  # берет файл из одной папки и копирует в сервер #hd osn
+            shutil.copyfile(path_to_out + file_name[0],
+                            hd_out_reserve + 'NaukaHD/' + file_name[0])
+        elif 'мульт'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
+            shutil.copyfile(path_to_out + file_name[0],
+                            hd_out_osn + 'MultHD/' + file_name[
+                                0])  # берет файл из одной папки и копирует в сервер #hd osn
+            shutil.copyfile(path_to_out + file_name[0],
+                            hd_out_reserve + 'MultHD/' + file_name[0])
+        elif 'нст'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
+            shutil.copyfile(path_to_out + file_name[0],
+                            sd_out_osn + 'NST/' + file_name[0])
+            shutil.copyfile(path_to_out + file_name[0],
+                            sd_out_reserve + 'NST/' + file_name[
+                                0])  # берет файл из одной папки и копирует в сервер #hd osn
+        elif 'cinema'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
+            shutil.copyfile(path_to_out + file_name[0],
+                            sd_out_osn + 'Cinema/' + file_name[
+                                0])  # берет файл из одной папки и копирует в сервер #hd osn
+            shutil.copyfile(path_to_out + file_name[0],
+                            sd_out_reserve + 'Cinema/' + file_name[0])
+        elif 'т24'.lower() in file_name[0].lower():  # проверка, с той путевкой мы работаем
+            shutil.copyfile(path_to_out + file_name[0],
+                            sd_out_osn + 'Techno24/' + file_name[
+                                0])  # берет файл из одной папки и копирует в сервер #hd osn
+            shutil.copyfile(path_to_out + file_name[0],
+                            sd_out_reserve + 'Techno24/' + file_name[0])
+    except Exception as e:
+        result = {'error': True, 'message': str(e)}
+    return result
 
 
 def test_file_size():
+    """
+    Проверка файла по размеру
+    todo надо подумать над размерам и куда-нибудь вставить
+    """
     file_sizes = {}
     result = ''
     items = os.listdir(dir_for_blocks)
@@ -740,12 +612,18 @@ def test_file_size():
     return file_sizes
 
 
-def check_sec(path, filename, path_to_old, old_list):  # todo доделать нормальный вывод в json
+def check_sec(path, filename, path_to_old, old_list):
+    print(filename)
+    print(old_list)
+    """ 
+    Сравнение входящего и исходящего плейлиста
+    Сравнивает входящий создались ли заменяющие блоки
+    В основном всегда False
+    """
     result = ''  # Результат, который мы будем возвращать
     liner, g, timer = [], [], []
     temp = []
     error_time = ''  # Строка для записи времени ошибок
-    print(filename)
     with open(path + filename, newline='', encoding='cp1251') as file:
         playlist = csv.reader(file, delimiter=';')
         for row in playlist:
@@ -776,7 +654,7 @@ def check_sec(path, filename, path_to_old, old_list):  # todo доделать �
     sheets_list = wb.sheetnames
     sheet = wb[sheets_list[0]]
     for i in range(1, sheet.max_row):
-        green = sheet.cell(row=i, column=1).fill.start_color.index  # FFB3FFC1 зеленый цвет
+        green = sheet.cell(row=i, column=4).fill.start_color.index  # FFB3FFC1 зеленый цвет
         if green == 'FFB3FFC1':
             green_value = sheet.cell(row=i, column=1).value[:-3]  # убираем кадры
             green_value = datetime.strptime(green_value, '%H:%M:%S')
@@ -797,32 +675,30 @@ def check_sec(path, filename, path_to_old, old_list):  # todo доделать �
 
 
 def check_sec_to_min(path, filename):
+    """
+    Проверка плейлиста, если есть блоки меньше трех минут то проинформирует
+    """
     result = ''  # Результат, который мы будем возвращать
     liner, g, timer = [], [], []
-
     with open(path + filename, newline='', encoding='cp1251') as file:
         playlist = csv.reader(file, delimiter=';')
         for row in playlist:
             liner.append(row)
-
     for i in range(0, len(liner)):
         if len(liner[i]) != 0:
             temp = datetime.strptime(liner[i][0], '%H:%M:%S')
             timer.append(temp.minute * 60 + temp.hour * 60 * 60 + temp.second)
         else:
             timer.append('')
-
     for i in range(0, len(timer) - 4):
         if type(timer[i + 1]) == str:
             if 0 < timer[i + 2] - timer[i] < 180:
                 if result == '':
                     result += 'В плейлисте:' + filename + ' проверь строки ' + str(i + 1) + '-' + str(i + 3) + ';'
-
     if len(result) < 3:
         result = {'error': False, 'message': 'В плейлисте:' + filename + ' ошибок нет'}
     else:
         result = {'error': True, 'message': result}
-
     return result
 
 
@@ -839,8 +715,9 @@ if __name__ == '__main__':
         chanel_name = plst_in[i].split("_")[-1].split(".")[0]
         if chanel_name.lower() == 'нст':  # блядский костыль
             chanel_name = "НСТ"
-        blocks, info_elem = parser_v2_test(r'C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\schedule\\', plst_in[i], chanel_name)
+        blocks, info_elem = parser_v2_test(
+            r'C:\Users\User\PycharmProjects\django_docker\orion_express\signal_media\temp\schedule\\', plst_in[i],
+            chanel_name)
         print(chanel_name)
         print(blocks)
         info.append(info_elem)
-

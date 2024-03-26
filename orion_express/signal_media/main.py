@@ -1,6 +1,7 @@
 import datetime
 import os
 import json
+from django.http import JsonResponse
 from .function import *
 
 
@@ -59,23 +60,22 @@ def created_blocks():
         write_blocks_to_file(blocks_result, path_to_out, plst_in[i])
 
 
+
 def copy_to_coder():
-    try:
-        my_list = open_file(path_to_out)
-        count = 0
-        for i in range(0, len(my_list)):
-            copy_after_kzpl(my_list[i].split())
-            count += 1
-        plst_to_log()
-        result = {
-            "count": count
-        }
-        return json.dumps(result)
-    except Exception as e:
-        error_result = {
-            "error": str(e)
-        }
-        return json.dumps(error_result)
+    my_list = open_file(path_to_out)
+    success_count = 0
+    failure_count = 0
+    errors = []
+    for file_name in my_list:
+        result = copy_after_my_parser(file_name.split())
+        if not result.get('error'):
+            success_count += 1
+        else:
+            failure_count += 1
+            errors.append(result['message'])
+    return {'success_count': success_count, 'failure_count': failure_count, 'errors': errors}
+
+
 
 
 def rename(year):
@@ -83,4 +83,3 @@ def rename(year):
     my_list = open_file(path_before)
     for i in range(0, len(my_list)):
         rename_recopy_v2(my_list[i].split('_'), year)
-

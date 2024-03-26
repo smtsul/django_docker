@@ -8,13 +8,15 @@ File upload
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <p>
-        <input type="file" name="myfile" multiple accept=".xlsx">
+        <input id="myfile" type="file" name="myfile" multiple accept=".xlsx">
     </p>
-    <button type="submit"> Загрузить </button>
+
+    <button type="button" id="testupld"> Загрузить test </button>
     <label for="year">Год:</label>
     <input value="2024" type="text" id="year" name="year" required>
+    <!-- <button type="submit"> Загрузить </button>
     <button type="button" id="renameBtn">Обработать плейлисты</button>
-    <button type="submit" id="action" value="log">Проверить плейлисты</button>
+    <button type="submit" id="action" value="log">Проверить плейлисты</button>-->
     <button type="submit" id="logged" value="log">Очистить список</button>
 </form>
 
@@ -28,9 +30,5 @@ File upload
         </ul>
     </div>
     <div class="error-block" id="errorBlock">Cписок ошибок</div>
-</div>
-
-<div>
-    <a href="{% url 'signal_media:edit_setting' %}">Edit setting</a>
 </div>
 {% endblock %}

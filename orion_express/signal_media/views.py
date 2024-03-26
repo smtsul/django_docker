@@ -65,22 +65,28 @@ def upload_files(request):
         folder_path = os.path.join(script_directory, "temp", "outter")
         files = get_file_list(folder_path)
     return render(request, 'signal_media/upload.html', {'plst': files})
-# def upload_files(request):
-#     files = []
-#     if request.method == 'POST':
-#         script_directory = os.path.abspath(os.path.dirname(__file__))
-#         input_folder = os.path.join(script_directory, "temp", "input")
-#         fs = FileSystemStorage(location=input_folder)
-#         for myfile in request.FILES.getlist('myfile'):
-#             # Удаляем существующий файл с тем же именем
-#             existing_file_path = fs.path(myfile.name)
-#             if fs.exists(existing_file_path):
-#                 fs.delete(existing_file_path)
-#             fs.save(myfile.name, myfile)
-#         folder_path = os.path.join(script_directory, "temp", "outter")
-#         files = get_file_list(folder_path)
-#         return JsonResponse({'status': 'success', 'files': files})
-#     return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
+@csrf_exempt
+def upload_files_better(request):
+    files = []
+    if request.method == 'POST':
+        script_directory = os.path.abspath(os.path.dirname(__file__))
+        input_folder = os.path.join(script_directory, "temp", "input")
+        fs = FileSystemStorage(location=input_folder)
+        for myfile in request.FILES.getlist('myfile'):
+            # Удаляем существующий файл с тем же именем
+            existing_file_path = fs.path(myfile.name)
+            if fs.exists(existing_file_path):
+                fs.delete(existing_file_path)
+            fs.save(myfile.name, myfile)
+        folder_path = os.path.join(script_directory, "temp", "outter")
+        year = request.POST.get('year')
+        create_time(year)
+        created_blocks()
+    script_directory = os.path.abspath(os.path.dirname(__file__))
+    folder_path = os.path.join(script_directory, "temp", "outter")
+    files = get_file_list(folder_path)
+    return JsonResponse({'files': files})
+    #return render(request, 'signal_media/upload.html', {'plst': files})
 
 def test_ajax_log(request):
     if os.name == 'nt':
@@ -103,12 +109,12 @@ def test_ajax_log(request):
 
 
 def logged(request):
-    # TODO: выполните необходимые действия
+    # Перемещает все плейлисты в папку лог
     result = plst_to_log()
     return JsonResponse(result)
 
 
-def edit_setting(request):  # ToDo подумать, как перезапустить питон
+def edit_setting(request):
     script_directory = os.path.abspath(os.path.dirname(__file__))
     ini_path = os.path.join(script_directory, "setting.ini")
     with open(ini_path, 'r', encoding='UTF-8') as f:

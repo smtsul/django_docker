@@ -59,8 +59,12 @@ def test(path, name):
                     graphics.set('ExtID','Shot_NoSmoke')
                 elif temp_ext_id=='shot_+18.tga':
                     graphics.set('ExtID', 'Shot_18+')
-                elif temp_ext_id=='shot_shottv_next.tga':
+                elif temp_ext_id=='shottv_next.tga':
                     graphics.set('ExtID','shot_nextmark_2022')
+                    # params = ET.SubElement('ExtID','Params')
+                    print(scheduled_event.find('NonPrimaryEvent').findall('Macros').text)
+                    # params.set(scheduled_event.findall('Macros').find('MacroParameterString').text)
+                    # params.set(scheduled_event.find('Macros').find('MacroParameterString').text)
                 else:
                     graphics.set('ExtID', 'shot_' + scheduled_event.find('ContentId').find('HouseNumber').text)
                 graphics.set('Name', scheduled_event.find('EventTitle'))
