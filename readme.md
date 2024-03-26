@@ -1,3 +1,4 @@
+docker-compose up --build
 #TODO сделать нормальный readme, а не смесь из readme и моих мыслей 
 api:
 http://127.0.0.1:9090/signal_media/api/playlist?year=2024
